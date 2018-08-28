@@ -24,7 +24,7 @@ console.log(" --- trace-able --- \n");
       result.step_2 = step_2;
     };
 
-    step_3 = step_1 || step_2;
+    const step_3 = step_1 || step_2;
     if (trace) {
       result.result = step_3;
     } else {

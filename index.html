@@ -44,41 +44,85 @@
         <br>
         <br>
         <br>
-        <br>
-        <h3>Parsonized Step-Through</h3>
+        <h2>
+            Inspect this page for more exercises
+        </h2>
+        <hr>
+        <h3>Concrete Step-Through</h3>
         <div id="concrete">
             <div name="parsons-boxes">
                 <!-- modify this line's id -->
-                <div id="shuffled-step-through" name="shuffled" class="sortable-code"></div>
+                <div id="shuffled-concrete" name="shuffled" class="sortable-code"></div>
                 <!-- modify this line's id -->
-                <div id="sorted-step-through" name="sorted" class="sortable-code"></div> 
+                <div id="sorted-concrete" name="sorted" class="sortable-code"></div> 
                 <div style="clear:both;"></div>
             </div>
 
             <div name="parsons-buttons">
                 <!-- modify this line's id -->
-                <a href="#" id="reshuffle-step-through" name="reshuffle">Re-Shuffle</a>
+                <a href="#" id="reshuffle-concrete" name="reshuffle">Re-Shuffle</a>
                 <!-- modify this line's id -->
-                <a href="#" id="feedback-step-through" name="feedback">Get feedback</a>
+                <a href="#" id="feedback-concrete" name="feedback">Get feedback</a>
             </div>
             <script>
                 // define your challenge here
                 config = {};
 
-                config.shuffled_id = "shuffled-step-through";
-                config.sorted_id = "sorted-step-through";
-                config.reshuffle_id = "reshuffle-step-through";
-                config.feedback_id = "feedback-step-through";
+                config.shuffled_id = "shuffled-concrete";
+                config.sorted_id = "sorted-concrete";
+                config.reshuffle_id = "reshuffle-concrete";
+                config.feedback_id = "feedback-concrete";
                 config.challenge = 
                     "// (num, 1), (str, '1') -> (bool, true) \n" +
-                    "a === b || a == b; \n" +
+                    "1 === '1' || 1 == '1'; \n" +
                     "  // (num, 1), (str, '1') \n" +
-                    "  a === b; \n" +
+                    "  1 === '1'; \n" +
                     "  // (num, 1), (str, '1') \n" +
-                    "  a == b; \n" +
+                    "  1 == '1'; \n" +
                     "  // (bool, false), (bool, true) \n" +
                     "  false || true; \n" +
                     "  // (bool, true)";
+
+                init_section(config);
+            </script>
+            <br>
+        </div>
+        <br>
+        <h3>Abstract Step-Through</h3>
+        <div id="abstract">
+            <div name="parsons-boxes">
+                <!-- modify this line's id -->
+                <div id="shuffled-abstract" name="shuffled" class="sortable-code"></div>
+                <!-- modify this line's id -->
+                <div id="sorted-abstract" name="sorted" class="sortable-code"></div> 
+                <div style="clear:both;"></div>
+            </div>
+
+            <div name="parsons-buttons">
+                <!-- modify this line's id -->
+                <a href="#" id="reshuffle-abstract" name="reshuffle">Re-Shuffle</a>
+                <!-- modify this line's id -->
+                <a href="#" id="feedback-abstract" name="feedback">Get feedback</a>
+            </div>
+            <script>
+                // define your challenge here
+                config = {};
+
+                config.shuffled_id = "shuffled-abstract";
+                config.sorted_id = "sorted-abstract";
+                config.reshuffle_id = "reshuffle-abstract";
+                config.feedback_id = "feedback-abstract";
+                config.challenge = 
+                    "let a = 1; \n" +
+                    "let b = '1'; \n" +
+                    "a === b || a == b; \n" +
+                    "  // a, b -> step_1 \n" +
+                    "  a === b; \n" +
+                    "  // a, b  -> step_2\n" +
+                    "  a == b; \n" +
+                    "  // step_1, step_2 \n" +
+                    "  step_1 || step_2; \n" +
+                    "  // final_state";
 
                 init_section(config);
             </script>

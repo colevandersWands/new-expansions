@@ -32,7 +32,9 @@ _Primitives:_
 
 ## Helpful links
 
-* [this repl.it](http://javascript.info/type-conversions)
+* [live exercises](https://colevanderswands.github.io/new-expansions/)  
+
+* [a repl.it](https://repl.it/@lindsay_strasser/Strictly-or-Loosely)
 * [operator precedence, js.info](http://javascript.info/operators#operators-precedence)
 * [comparisons, js.info](http://javascript.info/comparison)
 * [type conversions, js.info](http://javascript.info/type-conversions)
@@ -41,6 +43,8 @@ _Primitives:_
 ---
 
 ## Operator Precedence
+
+[inspect it](https://colevanderswands.github.io/new-expansions/)
 
 __concrete:__
 ```js
@@ -67,11 +71,12 @@ const b;
        step_3       ;
 ```
 
-[repl.it](http://javascript.info/type-conversions)
 
 ---
 
 ## Step-Through
+
+[parsons practice](https://colevanderswands.github.io/new-expansions/)
 
 __concrete:__
 ```js
@@ -102,13 +107,13 @@ const b = "1";
   // (bool,    )
 ```
 
-[repl.it](http://javascript.info/type-conversions)
 
-[parsons practice]()
 
 ---
 
 ## Trace Table
+
+[live quiz table](https://colevanderswands.github.io/new-expansions/)
 
 _concrete_:
 
@@ -127,7 +132,7 @@ _abstract_:
 | step | state  | operation |
 |---|---|---|
 | 0 | a, b | |
-| | | | a === b |
+| | | a === b |
 | 1 | step_1 | |
 | | | a == b |
 | 2 | step_2 |  |
@@ -135,11 +140,13 @@ _abstract_:
 | 3 | final_state | | 
 
 
-[live quiz]()
 
 --- 
 
 ## Trace Block
+
+[pytut](https://goo.gl/rK3p5R)  
+[inspect it](https://colevanderswands.github.io/new-expansions/)
 
 ```js
 const a = 1;
@@ -156,13 +163,14 @@ let actual;
 
 console.assert(actual === expected, 'nope');
 ```
-[pytut]()  
-[inspect it]()
 
 
 ---
 
 ## Encapuslated
+
+[pytut](https://goo.gl/nZbAQb)
+[inspect it](https://colevanderswands.github.io/new-expansions/)
 
 ```js
 const a = 1;
@@ -170,6 +178,7 @@ const b = "1";
 const expected = true;
 
 const actual = call_expression(a, b);
+
 function call_expression(a, b) {
   let result;
   const step_1 = a === b;
@@ -180,9 +189,14 @@ function call_expression(a, b) {
 };
 ```
 
+
 ---
 
 ## Trace-able
+
+[putut](https://goo.gl/i2948Y)
+[inspect it](https://colevanderswands.github.io/new-expansions/)
+
 
 ```js
 const a = 1;
@@ -209,7 +223,7 @@ function expression_tracer(a, b, trace) {
     result.step_2 = step_2;
   };
 
-  step_3 = step_1 || step_2;
+  const step_3 = step_1 || step_2;
   if (trace) {
     result.result = step_3;
   } else {
@@ -220,11 +234,11 @@ function expression_tracer(a, b, trace) {
 };
 ```
 
-
 ---
 
 ## Test Cases
 
+[inspect it](https://colevanderswands.github.io/new-expansions/)
 
 ```js
 
