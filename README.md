@@ -44,6 +44,8 @@ _Primitives:_
 
 ## Operator Precedence
 
+The order in which operators are executed, and how computed results "over-write" the operator.
+
 [inspect it](https://colevanderswands.github.io/new-expansions/)
 
 __concrete:__
@@ -75,6 +77,8 @@ const b;
 ---
 
 ## Step-Through
+
+Step-by-step breakdown, being the machine one operation at a time.
 
 [parsons practice](https://colevanderswands.github.io/new-expansions/)
 
@@ -113,6 +117,8 @@ const b = "1";
 
 ## Trace Table
 
+Computational steps illustrated as operations incrementally transforming state.
+
 [live quiz table](https://colevanderswands.github.io/new-expansions/)
 
 _concrete_:
@@ -145,6 +151,9 @@ _abstract_:
 
 ## Trace Block
 
+Break down the single expression into individual steps and assign them each to variables within a block.    
+This looks great in Python Tutor.
+
 [pytut](https://goo.gl/rK3p5R)  
 [inspect it](https://colevanderswands.github.io/new-expansions/)
 
@@ -169,7 +178,10 @@ console.assert(actual === expected, 'nope');
 
 ## Encapuslated
 
-[pytut](https://goo.gl/nZbAQb)
+Turn that block into a function, encapsulating the expression's behavior for repeated use.  
+Looks great in Python Tutor.
+
+[pytut](https://goo.gl/nZbAQb)  
 [inspect it](https://colevanderswands.github.io/new-expansions/)
 
 ```js
@@ -194,7 +206,10 @@ function call_expression(a, b) {
 
 ## Trace-able
 
-[putut](https://goo.gl/i2948Y)
+Add a new configuration argument to return a trace of the function's execution. A non-breaking API change designed to help developers understand and debug your function.  
+Looks great in Python Tutor.  
+
+[putut](https://goo.gl/i2948Y)  
 [inspect it](https://colevanderswands.github.io/new-expansions/)
 
 
@@ -237,6 +252,8 @@ function expression_tracer(a, b, trace) {
 ---
 
 ## Test Cases
+
+Code can be defined by it's behavior and behavior can be defined by test cases.  To understand this express, understand the test cases.
 
 [inspect it](https://colevanderswands.github.io/new-expansions/)
 
