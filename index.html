@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+    <head>
+        <title>expansions</title>
+
+        <!-- require challenges -->
+        <script src="./0-part-task.js"></script>
+        <script src="./1-operator-precedence.js"></script>
+        <script src="./2-step-through.js"></script>
+        <script src="./4-trace-block.js"></script>
+        <script src="./5-encapsulated.js"></script>
+        <script src="./6-trace-able.js"></script>
+
+        <!-- require scripts -->
+        <script src="./scripts/trace-it.js"></script>
+        <script src="./scripts/clear-table.js"></script>
+        <script src="./scripts/cast.js"></script>
+        
+        <link rel="stylesheet" href="./style.css">
+
+        <!-- the scripts that make parsons work -->
+        <link href="./parsons-utils/parsons.css" rel="stylesheet" />
+        <link href="./parsons-utils/lib/prettify.css" rel="stylesheet" />
+        <script src="./parsons-utils/lib/prettify.js"></script>
+        <script src="./parsons-utils/include.js"></script>
+        <script src="./parsons-utils/lib/jquery.min.js"></script>
+        <script src="./parsons-utils/lib/jquery-ui.min.js"></script>
+        <script src="./parsons-utils/lib/jquery.ui.touch-punch.min.js"></script>
+        <script src="./parsons-utils/lib/underscore-min.js"></script>
+        <script src="./parsons-utils/lib/lis.js"></script>
+        <script src="./parsons-utils/parsons.js"></script>
+        <script src='./parsons-utils/index.js'></script>
+
+    </head>
+    <body>
+        <div class="navbar">
+            <a>a === b</a>
+            <a>||</a>
+            <a>a == b</a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>Parsonized Step-Through</h3>
+        <div id="concrete">
+            <div name="parsons-boxes">
+                <!-- modify this line's id -->
+                <div id="shuffled-step-through" name="shuffled" class="sortable-code"></div>
+                <!-- modify this line's id -->
+                <div id="sorted-step-through" name="sorted" class="sortable-code"></div> 
+                <div style="clear:both;"></div>
+            </div>
+
+            <div name="parsons-buttons">
+                <!-- modify this line's id -->
+                <a href="#" id="reshuffle-step-through" name="reshuffle">Re-Shuffle</a>
+                <!-- modify this line's id -->
+                <a href="#" id="feedback-step-through" name="feedback">Get feedback</a>
+            </div>
+            <script>
+                // define your challenge here
+                config = {};
+
+                config.shuffled_id = "shuffled-step-through";
+                config.sorted_id = "sorted-step-through";
+                config.reshuffle_id = "reshuffle-step-through";
+                config.feedback_id = "feedback-step-through";
+                config.challenge = 
+                    "// (num, 1), (str, '1') -> (bool, true) \n" +
+                    "a === b || a == b; \n" +
+                    "  // (num, 1), (str, '1') \n" +
+                    "  a === b; \n" +
+                    "  // (num, 1), (str, '1') \n" +
+                    "  a == b; \n" +
+                    "  // (bool, false), (bool, true) \n" +
+                    "  false || true; \n" +
+                    "  // (bool, true)";
+
+                init_section(config);
+            </script>
+            <br>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h4>Fill the blanks in by hand, click "trace it", and inspect the console to see how you did.</h4>
+        <br>
+        <br>
+        <table>
+          <tr>
+            <th>step</th>
+            <th>state</th> 
+            <th>operation</th>
+          </tr>
+          <tr>  <!--    s0    -->
+            <td>initial state</td>
+            <td>
+                <div>   
+                         a: <input type="text" value="type" id="a-type">
+                            <input type="text" value="value" id="a-value">
+                <div>   
+                         b: <input type="text" value="type" id="b-type">
+                            <input type="text" value="value" id="b-value">
+            </td> 
+            <td>
+                <button type="button" onclick="trace_it()" id="trace-it-button">trace it</button></td>
+            </td>
+          </tr>
+          <tr>  <!--    o1    -->
+            <td></td>
+            <td></td> 
+            <td id="o1">a === b;</td>
+          </tr>
+          <tr>  <!--    s1    -->
+            <td>step 1</td>
+            <td>
+                <input id="s1-t" type="text" value="type"> <br>
+                <input id="s1-v" type="text" value="value">
+            </td> 
+            <td></td>
+          </tr>
+          <tr>  <!--    o2    -->
+            <td></td>
+            <td></td> 
+            <td id="o2">a == b;</td>
+          </tr>
+          <tr>  <!--    s2    -->
+            <td>step 2</td>
+            <td>
+                <input id="s2-t" type="text" value="type"> <br>
+                <input id="s2-v" type="text" value="value">
+            </td> 
+            <td></td>
+          </tr>
+          <tr>  <!--    o3    -->
+            <td></td>
+            <td></td> 
+            <td id="o3">step_1 || step_2;</td>
+          </tr>
+          <tr>  <!--    sf    -->
+            <td>expected: <br> final state</td>
+            <td>
+                <input id="expected-type" type="text" value="type"> <br>
+                <input id="expected-value" type="text" value="value">
+            </td> 
+            <td>
+                <button type="button" id="clear-table-button">clear table</button>
+            </td>
+          </tr>
+        </table>
+        <br>
+        <br>
+        <br>        
+        <hr>
+        <hr>
+        <a href="http://elewa.education/blog" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/34921062-506450ae-f97d-11e7-875f-6feeb26ad72d.png" width="150" height="60"/></a>
+        <br>
+        <br>
+    </body>
+</html>

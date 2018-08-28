@@ -1,0 +1,47 @@
+/* table */
+
+body {
+  font-family: Helvetica;
+}
+
+td {
+  padding: 1em 1.5em;
+  text-align: center;
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
+
+/* https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_fixed_menu */
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 40px;
+}
