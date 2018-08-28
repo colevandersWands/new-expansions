@@ -1,6 +1,8 @@
 # 1 === "1" || 1 == "1";
 
-In this expansion I am focusing on implicit type conversions and deep vs. shallow comparisons
+In this expansion I am focusing on implicit type conversions and deep vs. shallow comparisons.
+
+Turns out that it will be true if _a == b_ is true.  _a === b_ will never be true when _a == b_ is not.
  
 ### The Steps:
 0. [Component Analysis](#component-analysis)
@@ -10,7 +12,7 @@ In this expansion I am focusing on implicit type conversions and deep vs. shallo
 4. [Trace Block](#trace-block)
 5. [Encapsulated](#encapsulated)
 6. [Trace-able](#trace-able)
-
+7. [Test Cases](#test-cases)
  
 
 ---
@@ -218,6 +220,34 @@ function expression_tracer(a, b, trace) {
 };
 ```
 
+
+---
+
+## Test Cases
+
+
+```js
+
+let test_cases = [
+  {args: [1, "1"], expected: true},
+  {args: [2, "1"], expected: false},
+  {args: [0, "0"], expected: true},
+  {args: [false, ""], expected: true},
+  {args: [undefined, null], expected: true},
+  {args: [0, null], expected: false},
+  {args: ["", undefined], expected: false},
+  {args: [NaN, NaN], expected: false},
+  {args: [undefined, null], expected: true}
+];
+
+for (let case of test_cases) {
+  console.assert(
+    expression_tracer(...case.args) === case.expected, 
+    expression_tracer(...case.args, true),
+    {cond.expected});
+};
+
+```
 
 ___
 ___

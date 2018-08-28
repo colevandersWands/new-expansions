@@ -5,7 +5,7 @@ console.log(" --- trace-able --- \n");
   const expected = true;
   const actual = expression_tracer(a, b);
 
-  console.assert( Object.is(expected, actual), expression_tracer(a, b, true));
+  // console.assert( Object.is(expected, actual), expression_tracer(a, b, true));
 
   function expression_tracer(a, b, trace) {
     let result;

@@ -13,5 +13,5 @@ console.log(" --- trace block --- \n")
     actual = step_3;
   };
 
-  console.assert( Object.is( guess, actual ), `(${typeof a}, ${a}), (${typeof b}, ${b}) -> (${typeof actual}, ${actual})`);
+  // console.assert( Object.is( guess, actual ), `(${typeof a}, ${a}), (${typeof b}, ${b}) -> (${typeof actual}, ${actual})`);
 };
